@@ -1,0 +1,2 @@
+float32 temperature
+int32 humidity
