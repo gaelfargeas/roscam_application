@@ -75,7 +75,7 @@ ApplicationWindow {
 
             Text {
                 id: dht2_value_text
-                text: "Humidity: " + DHT22_value[0] + "%\nTemp: " + DHT22_value[1] +"°C"
+                text: "Humidity: " + roscam_main.DHT22_humidity_value + "%\nTemp: " + roscam_main.DHT22_temperature_value +"°C"
 
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
@@ -86,7 +86,10 @@ ApplicationWindow {
             
             }
         }
+
+        
     }
+
    
     Rectangle
     {
@@ -101,8 +104,23 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.leftMargin: 20
 
-        color: "#424242"
+        color: "#757575"
         radius: 20
+
+        border.width: 5
+        border.color: "#424242"
+
+        MediaPlayer {
+            id: mediaplayer1
+            //source: "rtsp://admin:admin@192.168.1.q/1/stream1"
+        }
+
+        VideoOutput {
+            anchors.fill: parent
+            anchors.margins: 10
+            source: mediaplayer1
+
+        }
     }
 
 

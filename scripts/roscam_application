@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+import roscam_application
+
+if __name__ == "__main__":
+    roscam_application.main()

@@ -23,6 +23,8 @@ if( CATKIN_DEVEL_PREFIX OR catkin_FOUND OR CATKIN_BUILD_BINARY_PACKAGE)
         FILES
         DHT22.msg
         )
+
+    catkin_python_setup()
         
     generate_messages(
         DEPENDENCIES
@@ -111,9 +113,11 @@ include_directories(
 #############
 
 catkin_install_python(PROGRAMS
-  scripts/main.py
+  scripts/roscam_application
+  # scripts/threaded_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
 
 #############
 ## Testing ##
